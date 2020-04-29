@@ -1,0 +1,266 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background: #e0e0e0;
+    font-family: robotoRegular, sans-serif;
+    position: relative;
+}
+.main-loader{
+    background-color: rgb(194, 194, 194);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .loader{
+        border: solid 5px #f3f3f3;
+        border-top: solid 5px rgb(9, 201, 137);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+        0%{ transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+}
+
+#main{
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    
+
+    .background{
+        width: 100%;
+        height: 50vh;
+        // padding: 25px 10%;
+        padding: 15px 10%;
+        background: rgb(248, 136, 8);
+
+        .logo{
+            font-size: 30px;
+            font-weight: bolder;
+            color: #fff;
+        }
+
+    }
+    
+    .main-container{
+        width: 260px;
+        height: 75vh;
+        padding: 15px;
+        background: #fff;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        .loader{
+            display: none;
+            margin: auto;
+            margin-top: calc(50% + 40px);
+            border: solid 5px #f3f3f3;
+            border-top: solid 5px rgb(9, 201, 137);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            0%{ transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+
+        .flex-container{
+            height: 100%;
+            color: rgb(56, 56, 56);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .first{
+                width: 100%;
+                flex-basis: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .second{
+                width: 100%;
+                flex-basis: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .flex-container.intro, .flex-container.results{
+    
+            img{
+                width: 80px;
+            }
+            p{
+                font-size: 20px;
+            }
+            .score{
+                font-size: 20px;
+                margin-top: 15px;
+            }
+        }
+
+        .flex-container.results{
+            display: none;
+        }
+        .flex-container.settings{
+            display: none;
+            p{
+                font-size: 18px;
+                margin-bottom: 50px;
+            }
+            .input-group{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+        
+                label{
+                    font-size: 14px;
+                    color: #7a7a7a;
+                    text-align: left;
+                    margin-bottom: 5px;
+                }
+                select{
+                    height: 33px;
+                    border: solid 2px rgb(9, 201, 137);
+                    border-radius: 8px;
+                    color: rgb(56, 56, 56);
+                    font-size: 16px;
+                     option{
+                         background-color: #fff !important;
+                     }
+                    
+                }
+                select:focus{
+                    outline: none;
+                }
+            }
+        }
+
+        .flex-container.game{
+            display: none;
+            img{
+                width: 60px;
+            }
+            p{
+                color: rgb(136, 136, 136);
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+            .answers{
+                width: 100%;
+                .answer-1,.answer-2,.answer-3,.answer-4{
+                    text-align: left;
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                    padding: 5px;
+                    border: solid 1px rgb(9, 201, 137);
+                    border-radius: 8px;
+                }
+                
+            }
+        }
+
+    }
+}
+
+.hide-section{
+    animation: hide 1s;
+}
+@keyframes hide{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+
+.btn-default{
+    font-size: 18px;
+    padding: 6px 25px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background: rgb(9, 201, 137);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+}
+
+
+@media screen and (min-width: 425px){
+    #main{
+        .background{
+            padding-top: 15px;
+        }
+        .main-container{
+            width: 250px;
+            height: 80vh;
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    #main{
+        .background{
+            padding-top: 15px;
+        }
+        .main-container{
+            width: 320px;
+            height: 75vh;
+        }
+    }
+}
+@media screen and (min-width: 992px){
+    #main{
+        .background{
+            padding-top: 15px;
+        }
+        .main-container{
+            width: 350px;
+            height: 75vh;
+        }
+    }
+}
+
+.results-btn{
+    display: none;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 30px;
+    padding: 0 10%;
+    color: rgb(37, 37, 37);
+    text-align: center;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+@font-face{
+    font-family: robotoRegular;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
